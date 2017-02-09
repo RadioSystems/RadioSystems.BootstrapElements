@@ -1,0 +1,26 @@
+﻿@using RadioSystems.BootstrapElements.Elements
+
+@{
+    var popover = (ButtonPopover) Model.Element;
+}
+
+<button id="@popover.HtmlId"
+        type="button"
+        class="btn btn-default btn-block"
+        tabindex="0"
+        title="@popover.Title"
+        data-container="body"
+        data-toggle="popover"
+        data-trigger="focus"
+        data-placement="@popover.Position"
+        data-content="@Html.Raw(popover.Content)">
+    @popover.ButtonText
+</button>
+
+@using (Script.Foot()) {
+    <script>
+        $(document).ready(function() {
+            $("#@popover.HtmlId").popover({html: true});
+        });
+    </script>
+}

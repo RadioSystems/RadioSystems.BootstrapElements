@@ -1,0 +1,15 @@
+﻿@using RadioSystems.BootstrapElements.Elements
+@{
+    var element = (Panel) Model.Element;
+}
+
+<div id="@element.HtmlId" class="@string.Format("panel panel-default {0}", element.HtmlClass)" style="@element.HtmlStyle">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <i class="fa @element.PanelIcon"></i>@element.PanelTitle
+        </h3>
+    </div>
+    <div class="panel-body">
+        @Html.Raw(element.PanelBody)
+    </div>
+</div>

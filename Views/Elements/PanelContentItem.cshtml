@@ -1,0 +1,16 @@
+﻿@using RadioSystems.BootstrapElements.Elements
+@{
+    var element = (PanelContentItem)Model.Element;
+}
+<div id="=@element.HtmlId" class="@element.HtmlClass" style="@element.HtmlStyle">
+    @foreach (var contentItem in Model.ContentItems) {
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa @contentItem.IconClass"></i>@contentItem.Title</h3>
+            </div>
+            <div class="panel-body">
+                @Display(contentItem.ContentShape)
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,35 @@
+﻿@using Blue.BootstrapElements.Elements
+@{
+    var modal = (Modal) Model.Element;
+}
+
+<div id="@modal.HtmlId" class="@string.Format("modal fade {0} {1}", modal.Type, modal.HtmlClass)" style="@modal.HtmlStyle" tabindex="-1" role="dialog">
+    <div class="@string.Format("modal-dialog modal-{0}", modal.Size)" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-remove" aria-hidden="true"></i>
+                </button>
+                <h4 class="modal-title">@modal.Header</h4>
+            </div>
+            @if (!string.IsNullOrEmpty(modal.Body)) {
+                <div class="modal-body">
+                    @Html.Raw(modal.Body)
+                </div>
+            }
+            @if (!string.IsNullOrEmpty(modal.Footer)) {
+                <div class="modal-footer">
+                    @Html.Raw(modal.Footer)
+                </div>
+            }
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@using (Script.Foot()) {
+    <script>
+        $(document).ready(function() {
+            $("#@modal.HtmlId").modal("show");
+        });
+    </script>
+}

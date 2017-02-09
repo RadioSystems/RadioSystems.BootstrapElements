@@ -1,0 +1,8 @@
+﻿@using Blue.BootstrapElements.Elements
+@{
+    var shadowBox = (ShadowBox) Model.Element;
+}
+
+<div id="@shadowBox.HtmlId" class="@string.Format("shadow-box {0}", shadowBox.HtmlClass)" style="@shadowBox.HtmlStyle">
+    @DisplayChildren(Model)
+</div>

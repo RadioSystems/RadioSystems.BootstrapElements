@@ -1,0 +1,15 @@
+﻿@using Orchard.Layouts.ViewModels;
+<div class="layout-element-wrapper" ng-class="{'layout-container-empty': getShowChildrenPlaceholder()}">
+    <ul class="layout-panel layout-panel-main">
+        <li class="layout-panel-item layout-panel-label">Shadow Box</li>
+        @Display()
+        @Display(New.LayoutEditor_Template_Properties(ElementTypeName: "shadowbox"))
+        <li class="layout-panel-item layout-panel-action" title="@T("Delete {{element.contentTypeLabel.toLowerCase()}} (Del)")" ng-click="delete(element)"><i class="fa fa-remove"></i></li>
+        <li class="layout-panel-item layout-panel-action" title="@T("Move {{element.contentTypeLabel.toLowerCase()}} up (Ctrl+Up)")" ng-click="element.moveUp()" ng-class="{disabled: !element.canMoveUp()}"><i class="fa fa-chevron-up"></i></li>
+        <li class="layout-panel-item layout-panel-action" title="@T("Move {{element.contentTypeLabel.toLowerCase()}} down (Ctrl+Down)")" ng-click="element.moveDown()" ng-class="{disabled: !element.canMoveDown()}"><i class="fa fa-chevron-down"></i></li>
+    </ul>
+    <div class="layout-container-children-placeholder">
+        @T("Drag content here to display it in a shadow box.")
+    </div>
+    @Display(New.LayoutEditor_Template_Children())
+</div>

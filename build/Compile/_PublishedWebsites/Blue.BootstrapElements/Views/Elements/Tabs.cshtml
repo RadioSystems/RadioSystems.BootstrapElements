@@ -1,0 +1,28 @@
+﻿@using Blue.BootstrapElements.Elements
+@{
+    var tabs = (Tabs) Model.Element;
+    var tabPanes = tabs.Elements.Select((value, i) => new {i, value}).ToList();
+}
+<div id="@tabs.HtmlId" class="tab-container" role="tablist" aria-multiselectable="true" style="@tabs.HtmlStyle">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+        @foreach (var item in tabPanes) {
+            var tabPane = (TabPane) item.value;
+            <li role="presentation" class="@string.Format("{0}", item.i == 0 ? "active" : string.Empty)">
+                <a href="#@tabPane.HtmlId" aria-controls="@tabPane.HtmlId" role="tab" data-toggle="tab">
+                    @if (!string.IsNullOrEmpty(tabPane.Icon)) {
+                        <i class="@string.Format("fa {0}", tabPane.Icon)"></i>
+                    }
+                    @tabPane.Title
+                </a>
+            </li>
+        }
+    </ul>
+    <div class="tab-content">
+        @foreach (var item in tabPanes) {
+            var tabPane = (TabPane) item.value;
+            <div role="tabpanel" class="@string.Format("tab-pane {0}", item.i == 0 ? "active" : string.Empty)" id="@tabPane.HtmlId">
+                @Html.Raw(tabPane.Content)
+            </div>
+        }
+    </div>
+</div>

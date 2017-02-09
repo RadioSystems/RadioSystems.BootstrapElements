@@ -1,0 +1,14 @@
+﻿@model RadioSystems.BootstrapElements.Elements.Panel
+
+<fieldset>
+    @Html.LabelFor(m => m.PanelTitle, T("Panel Title"))
+    @Html.TextBoxFor(m => m.PanelTitle)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.PanelIcon, T("Panel Icon"))
+    @Html.TextBoxFor(m => m.PanelIcon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.PanelBody, T("Panel Body"))
+    @Display.HtmlEditor(PropertyName: "PanelBody", Text: Model.PanelBody, AutoFocus: true)
+</fieldset>

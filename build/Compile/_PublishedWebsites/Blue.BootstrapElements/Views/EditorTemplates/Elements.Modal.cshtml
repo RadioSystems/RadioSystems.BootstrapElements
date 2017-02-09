@@ -1,0 +1,30 @@
+﻿@model Blue.BootstrapElements.Elements.Modal
+
+<fieldset>
+    @Html.LabelFor(m => m.Header, T("Modal Header"))
+    @Html.TextBoxFor(m => m.Header)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Size, T("Modal Size"))
+    @Html.DropDownListFor(m => m.Size, new SelectList(new[] {
+        new KeyValuePair<string, string>("Small", "sm"),
+        new KeyValuePair<string, string>("Medium", "md"),
+        new KeyValuePair<string, string>("Large", "lg")
+    }, "Value", "Key"))
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Type, T("Modal Type"))
+    @Html.DropDownListFor(m => m.Type, new SelectList(new[] {
+        new KeyValuePair<string, string>("Info", "info"),
+        new KeyValuePair<string, string>("Warning", "warning"),
+        new KeyValuePair<string, string>("Alert", "alert")
+    }, "Value", "Key"))
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Body, T("Modal Body"))
+    @Display.HtmlEditor(PropertyName: "Body", Text: Model.Body, AutoFocus: true)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Footer, T("Modal Footer"))
+    @Display.HtmlEditor(PropertyName: "Footer", Text: Model.Footer, AutoFocus: true)
+</fieldset>

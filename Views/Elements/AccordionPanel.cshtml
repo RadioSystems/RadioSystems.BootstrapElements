@@ -1,0 +1,28 @@
+﻿@using RadioSystems.BootstrapElements.Elements
+@{
+    var element = (AccordionPanel) Model.Element;
+    var parent = element.Container;
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-one", element.HtmlId)">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse"
+               onclick="toggleArrow(event)"
+               data-parent="@string.Format("#{0}-accordion", parent != null ? parent.HtmlId : string.Empty)"
+               href="@string.Format("#{0}-collapse-one", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                <i class="fa @element.Icon"></i>
+                @element.Title
+                <i class="@string.Format("fa fa-caret-{0}", element.DefaultExpanded ? "up" : "down")" style="float: right;"></i>
+            </a>
+        </h4>
+    </div>
+    <div id="@string.Format("{0}-collapse-one", element.HtmlId)" 
+         class="@string.Format("panel-collapse collapse {0}", element.DefaultExpanded ? "in": string.Empty)" 
+         role="tabpanel" 
+         aria-labelledby="@element.Body">
+        <div class="panel-body">
+            @Html.Raw(element.Body)
+        </div>
+    </div>
+</div>

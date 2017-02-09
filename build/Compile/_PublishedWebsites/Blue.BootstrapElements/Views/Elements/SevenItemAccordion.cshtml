@@ -1,0 +1,132 @@
+﻿@using Blue.BootstrapElements.Elements
+@{
+    var element = (SevenItemAccordion) Model.Element;
+}
+<div class="@string.Format("panel-group {0}", element.HtmlClass)" id="@string.Format("{0}-accordion", element.HtmlId)" role="tablist" aria-multiselectable="true" style="@element.HtmlStyle">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-one", element.HtmlId)">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse"
+                   onclick="toggleArrow(event)"
+                   data-parent="@string.Format("#{0}-accordion", element.HtmlId)" href="@string.Format("#{0}-collapse-one", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa @element.ItemOneIcon"></i>
+                    @element.ItemOneTitle
+                    <i class="fa fa-caret-up" style="float: right;"></i>
+                </a>
+            </h4>
+        </div>
+        <div id="@string.Format("{0}-collapse-one", element.HtmlId)" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="@element.ItemOneTitle">
+            <div class="panel-body">
+                @Html.Raw(element.ItemOneBody)
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-two", element.HtmlId)">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse"
+                   onclick="toggleArrow(event)"
+                   data-parent="@string.Format("#{0}-accordion", element.HtmlId)" href="@string.Format("#{0}-collapse-two", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa @element.ItemTwoIcon"></i>
+                    @element.ItemTwoTitle
+                    <i class="fa fa-caret-down" style="float: right;"></i>
+                </a>
+            </h4>
+        </div>
+        <div id="@string.Format("{0}-collapse-two", element.HtmlId)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@element.ItemTwoTitle">
+            <div class="panel-body">
+                @Html.Raw(element.ItemTwoBody)
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-three", element.HtmlId)">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse"
+                   onclick="toggleArrow(event)"
+                   data-parent="@string.Format("#{0}-accordion", element.HtmlId)" href="@string.Format("#{0}-collapse-three", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa @element.ItemThreeIcon"></i>
+                    @element.ItemThreeTitle
+                    <i class="fa fa-caret-down" style="float: right;"></i>
+                </a>
+            </h4>
+        </div>
+        <div id="@string.Format("{0}-collapse-three", element.HtmlId)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@element.ItemThreeTitle">
+            <div class="panel-body">
+                @Html.Raw(element.ItemThreeBody)
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-four", element.HtmlId)">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse"
+                   onclick="toggleArrow(event)"
+                   data-parent="@string.Format("#{0}-accordion", element.HtmlId)" href="@string.Format("#{0}-collapse-four", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa @element.ItemFourIcon"></i>
+                    @element.ItemFourTitle
+                    <i class="fa fa-caret-down" style="float: right;"></i>
+                </a>
+            </h4>
+        </div>
+        <div id="@string.Format("{0}-collapse-four", element.HtmlId)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@element.ItemFourTitle">
+            <div class="panel-body">
+                @Html.Raw(element.ItemFourBody)
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-five", element.HtmlId)">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse"
+                   onclick="toggleArrow(event)"
+                   data-parent="@string.Format("#{0}-accordion", element.HtmlId)" href="@string.Format("#{0}-collapse-five", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa @element.ItemFiveIcon"></i>
+                    @element.ItemFiveTitle
+                    <i class="fa fa-caret-down" style="float: right;"></i>
+                </a>
+            </h4>
+        </div>
+        <div id="@string.Format("{0}-collapse-five", element.HtmlId)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@element.ItemFiveTitle">
+            <div class="panel-body">
+                @Html.Raw(element.ItemFiveBody)
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-six", element.HtmlId)">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse"
+                   onclick="toggleArrow(event)"
+                   data-parent="@string.Format("#{0}-accordion", element.HtmlId)" href="@string.Format("#{0}-collapse-six", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa @element.ItemSixIcon"></i>
+                    @element.ItemSixTitle
+                    <i class="fa fa-caret-down" style="float: right;"></i>
+                </a>
+            </h4>
+        </div>
+        <div id="@string.Format("{0}-collapse-six", element.HtmlId)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@element.ItemSixTitle">
+            <div class="panel-body">
+                @Html.Raw(element.ItemSixBody)
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-seven", element.HtmlId)">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse"
+                   onclick="toggleArrow(event)"
+                   data-parent="@string.Format("#{0}-accordion", element.HtmlId)" href="@string.Format("#{0}-collapse-seven", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa @element.ItemSevenIcon"></i>
+                    @element.ItemSevenTitle
+                    <i class="fa fa-caret-down" style="float: right;"></i>
+                </a>
+            </h4>
+        </div>
+        <div id="@string.Format("{0}-collapse-seven", element.HtmlId)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@element.ItemSevenTitle">
+            <div class="panel-body">
+                @Html.Raw(element.ItemSevenBody)
+            </div>
+        </div>
+    </div>
+</div>

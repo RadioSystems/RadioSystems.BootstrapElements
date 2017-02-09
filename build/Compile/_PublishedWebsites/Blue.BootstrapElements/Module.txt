@@ -1,0 +1,12 @@
+﻿Name: Blue.BootstrapElements
+AntiForgery: enabled
+Author: Radio Systems Corp.
+Website: http://orchardproject.net
+Version: 1.0
+OrchardVersion: 1.9.2
+Description: Defines a set of layout elements based on Bootstrap css framework
+Category: Blue
+Features:
+    Blue.BootstrapElements:
+        Description: Layout elements based on Bootstrap
+		Dependencies: Orchard.Layouts, Orchard.DynamicForms, Blue.NavigationExtensions, Blue.VendorFrameworks

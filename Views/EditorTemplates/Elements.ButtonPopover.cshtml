@@ -1,0 +1,24 @@
+﻿@model RadioSystems.BootstrapElements.Elements.ButtonPopover
+
+<fieldset>
+    @Html.LabelFor(m => m.Title, T("Title"))
+    @Html.TextBoxFor(m => m.Title)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ButtonText, T("Button Text"))
+    @Html.TextBoxFor(m => m.ButtonText)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Position, T("Position"))
+    @Html.DropDownListFor(m => m.Position, new SelectList(new[] {
+        new KeyValuePair<string, string>("Select a position", string.Empty),
+        new KeyValuePair<string, string>("Left", "left"),
+        new KeyValuePair<string, string>("Right", "right"),
+        new KeyValuePair<string, string>("Top", "top"),
+        new KeyValuePair<string, string>("Bottom", "bottom") 
+    }, "Value", "Key"))
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Content, T("Content"))
+    @Display.HtmlEditor(PropertyName: "Content", Text: Model.Content, AutoFocus: true)
+</fieldset>

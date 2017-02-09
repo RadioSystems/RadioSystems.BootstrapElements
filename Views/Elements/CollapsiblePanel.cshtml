@@ -1,0 +1,34 @@
+﻿@using RadioSystems.BootstrapElements.Elements
+@{
+    var element = (CollapsiblePanel) Model.Element;
+
+    var defaultCollapseState = "collapse in";
+    var defaultCaretOrientation = "fa fa-caret-up";
+
+    if (element.DefaultCollapsed) {
+        defaultCollapseState = "collapse";
+        defaultCaretOrientation = "fa fa-caret-down";
+    }
+
+}
+<div class="panel-group" id="@string.Format("{0}-accordion", element.HtmlId)" role="tablist" aria-multiselectable="true" style="@element.HtmlStyle">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-one", element.HtmlId)">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse"
+                   onclick="toggleArrow(event)"
+                   data-parent="@string.Format("#{0}-accordion", element.HtmlId)" 
+                   href="@string.Format("#{0}-collapse-one", element.HtmlId)" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa @element.Icon"></i>
+                    @element.Title
+                    <i class="@defaultCaretOrientation" style="float: right;"></i>
+                </a>
+            </h4>
+        </div>
+        <div id="@string.Format("{0}-collapse-one", element.HtmlId)" class="panel-collapse @defaultCollapseState" role="tabpanel" aria-labelledby="@element.Body">
+            <div class="panel-body">
+                @Html.Raw(element.Body)
+            </div>
+        </div>
+    </div>
+</div>

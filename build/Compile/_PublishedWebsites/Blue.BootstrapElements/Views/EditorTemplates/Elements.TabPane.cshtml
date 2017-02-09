@@ -1,0 +1,14 @@
+﻿@model Blue.BootstrapElements.Elements.TabPane
+
+<fieldset>
+    @Html.LabelFor(m => m.Title, T("Title"))
+    @Html.TextBoxFor(m => m.Title)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Icon, T("Icon (Font Awesome class)"))
+    @Html.TextBoxFor(m => m.Icon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Content, T("Content"))
+    @Display.HtmlEditor(PropertyName: "Content", Text: Model.Content, AutoFocus: true)
+</fieldset>

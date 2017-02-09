@@ -1,0 +1,8 @@
+﻿@using Blue.BootstrapElements.Elements
+@{
+    var element = (JumboTron) Model.Element;
+}
+
+<div id="@element.HtmlId" class="@string.Format("jumbotron {0}", element.HtmlClass)" style="@element.HtmlStyle">
+    @DisplayChildren(Model)
+</div>

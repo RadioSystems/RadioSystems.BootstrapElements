@@ -1,0 +1,18 @@
+﻿@model RadioSystems.BootstrapElements.Elements.CollapsiblePanel
+
+<fieldset>
+    @Html.LabelFor(m => m.Title, T("Heading"))
+    @Html.TextBoxFor(m => m.Title)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.DefaultCollapsed, T("Collapse By Default"))
+    @Html.CheckBoxFor(m => m.DefaultCollapsed)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Icon, T("Icon"))
+    @Html.TextBoxFor(m => m.Icon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Body, T("Content"))
+    @Display.HtmlEditor(PropertyName: "Body", Text: Model.Body, AutoFocus: true)
+</fieldset>

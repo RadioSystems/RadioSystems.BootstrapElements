@@ -1,0 +1,62 @@
+﻿@model RadioSystems.BootstrapElements.Elements.FiveItemAccordion
+
+<fieldset>
+    @Html.LabelFor(m => m.ItemOneTitle, T("Heading for Item 1"))
+    @Html.TextBoxFor(m => m.ItemOneTitle)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemOneIcon, T("Icon for Item 1"))
+    @Html.TextBoxFor(m => m.ItemOneIcon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemOneBody, T("Content for Item 1"))
+    @Display.HtmlEditor(PropertyName: "ItemOneBody", Text: Model.ItemOneBody, AutoFocus: true)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemTwoTitle, T("Heading for Item 2"))
+    @Html.TextBoxFor(m => m.ItemTwoTitle)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemTwoIcon, T("Icon for Item 2"))
+    @Html.TextBoxFor(m => m.ItemTwoIcon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemTwoBody, T("Content for Item 2"))
+    @Display.HtmlEditor(PropertyName: "ItemTwoBody", Text: Model.ItemTwoBody, AutoFocus: true)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemThreeTitle, T("Heading for Item 3"))
+    @Html.TextBoxFor(m => m.ItemThreeTitle)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemThreeIcon, T("Icon for Item 3"))
+    @Html.TextBoxFor(m => m.ItemThreeIcon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemThreeBody, T("Content for Item 3"))
+    @Display.HtmlEditor(PropertyName: "ItemThreeBody", Text: Model.ItemThreeBody, AutoFocus: true)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemFourTitle, T("Heading for Item 4"))
+    @Html.TextBoxFor(m => m.ItemFourTitle)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemFourIcon, T("Icon for Item 4"))
+    @Html.TextBoxFor(m => m.ItemFourIcon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemFourBody, T("Content for Item 4"))
+    @Display.HtmlEditor(PropertyName: "ItemFourBody", Text: Model.ItemFourBody, AutoFocus: true)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemFiveTitle, T("Heading for Item 5"))
+    @Html.TextBoxFor(m => m.ItemFiveTitle)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemFiveIcon, T("Icon for Item 5"))
+    @Html.TextBoxFor(m => m.ItemFiveIcon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.ItemFiveBody, T("Content for Item 5"))
+    @Display.HtmlEditor(PropertyName: "ItemFiveBody", Text: Model.ItemFiveBody, AutoFocus: true)
+</fieldset>

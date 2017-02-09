@@ -1,0 +1,39 @@
+﻿@using Blue.BootstrapElements.Elements
+@using Blue.NavigationExtensions.Models
+@{
+    var element = (CollapsiblePanelContentItem) Model.Element;
+}
+<div class="panel-group" id="@string.Format("{0}-accordion", element.HtmlId)" role="tablist" aria-multiselectable="true" style="@element.HtmlStyle">
+    @{
+        var index = 0;
+    }
+    @foreach (var contentItem in Model.ContentItems) {
+        var defaultCollapsed = "collapse in";
+        var caretOrientation = "fa fa-caret-up";
+
+        if (index != 0) {
+            defaultCollapsed = "collapse";
+            caretOrientation = "fa fa-caret-down";
+        }
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="@string.Format("{0}-heading-{1}", element.HtmlId, index)">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse"
+                       onclick="toggleArrow(event)"
+                       data-parent="@string.Format("#{0}-accordion", element.HtmlId)" href="@string.Format("#{0}-collapse-{1}", element.HtmlId, index)" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="fa @contentItem.IconClass"></i>
+                        @contentItem.Title
+                        <i class="@caretOrientation" style="float: right;"></i>
+                    </a>
+                </h4>
+            </div>
+            <div id="@string.Format("{0}-collapse-{1}", element.HtmlId, index)" class="panel-collapse @defaultCollapsed" role="tabpanel" aria-labelledby="@contentItem.Title">
+                <div class="panel-body">
+                    @Display(contentItem.ContentShape)
+                </div>
+            </div>
+        </div>
+
+        index++;
+    }
+</div>

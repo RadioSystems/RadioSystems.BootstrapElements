@@ -1,0 +1,46 @@
+﻿@using Blue.BootstrapElements.Elements
+@{
+    var carousel = (Carousel) Model.Element;
+}
+@{
+    <style>
+        .carousel-inner .item img {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+}
+
+<div id="@carousel.HtmlId" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        @{
+            var i = 0;
+        }
+        @foreach (var item in Model.ContentItems) {
+            <li data-target="#@carousel.HtmlId" data-slide-to="" class="@(i == 0 ? "active" : string.Empty)"></li>
+            i++;
+        }
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        @{
+            var y = 0;
+        }
+        @foreach (var mediaUrl in Model.ContentItems) {
+            <div class="item @(y == 0 ? "active" : string.Empty)">
+                <img src="@mediaUrl"/>
+            </div>
+            y++;
+        }
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#@carousel.HtmlId" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#@carousel.HtmlId" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

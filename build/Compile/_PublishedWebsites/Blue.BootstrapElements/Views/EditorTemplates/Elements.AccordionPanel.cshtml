@@ -1,0 +1,18 @@
+﻿@model Blue.BootstrapElements.Elements.AccordionPanel
+
+<fieldset>
+    @Html.LabelFor(m => m.Title, T("Panel Title"))
+    @Html.TextBoxFor(m => m.Title)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Icon, T("Panel Icon"))
+    @Html.TextBoxFor(m => m.Icon)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.DefaultExpanded, T("Default to Expanded"))
+    @Html.CheckBoxFor(m => m.DefaultExpanded)
+</fieldset>
+<fieldset>
+    @Html.LabelFor(m => m.Body, T("Panel Body"))
+    @Display.HtmlEditor(PropertyName: "Body", Text: Model.Body, AutoFocus: true)
+</fieldset>

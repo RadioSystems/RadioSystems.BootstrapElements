@@ -1,0 +1,7 @@
+﻿@using RadioSystems.BootstrapElements.Elements
+@{
+    var element = (Accordion) Model.Element;
+}
+<div class="panel-group" id="@string.Format("{0}-accordion", element.HtmlId)" role="tablist" aria-multiselectable="true" style="@element.HtmlStyle">
+    @DisplayChildren(Model)
+</div>
