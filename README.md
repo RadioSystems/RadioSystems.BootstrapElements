@@ -24,7 +24,7 @@ Tabs create a tabbable area on a page. They are displayed as follows:
 
 To create tabs on a page you must follow the following steps:
 
-1. Drag a **Tabs** container element from the right side menu under the *Blue* sub-section.
+1. Drag a **Tabs** container element from the right side menu under the *Bootstrap* sub-section.
 
 2. Drag two more more **Tab Pane** elements into the *Tabs* container. **Ensure that you put the *Tab Pane* inside the *Tabs* container**.
 
@@ -39,7 +39,7 @@ You can specify the position of the popover text as *Top*, *Bottom*, *Left*, or 
 ## Modal
 A modal is a dismissable popover window that will be displayed on page load.
 
-In order to add a modal to a page, drag a **Modal** item from the right hand menu under the *Blue* sub-section. Then fill in the desired parameters.
+In order to add a modal to a page, drag a **Modal** item from the right hand menu under the *Boostrap* sub-section. Then fill in the desired parameters.
 
 There are three modal types to select from, **Info**, **Warning**, and **Alert**. These types dictate that color of the modal header background. Info is standard *blue*, warning is *yellow*, and alert is *red*
 
@@ -48,5 +48,5 @@ There are three modal types to select from, **Info**, **Warning**, and **Alert**
 
 A shadow box is a container element that is displayed as a white box with a slightly transparent background and a shadow effect. 
 
-In order to add a shadow box, drag a **Shadow Box** element from the right hande side under the *Blue* subsection. Once you have added it, you can then add any other items you wish inside of it to create content
+In order to add a shadow box, drag a **Shadow Box** element from the right hande side under the *Bootstrap* subsection. Once you have added it, you can then add any other items you wish inside of it to create content
 that is shadow boxed.
